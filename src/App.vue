@@ -4,9 +4,9 @@ import ReportButton from "./components/ReportButton.vue";
 </script>
 
 <template>
-  <div>
+  <div class="app-container">
     <NavigationBar />
-    <div>
+    <div class="section-container">
       <section id="home" class="section-card">
         <header><h1>Be a watchdog</h1></header>
         <ReportButton />
@@ -20,6 +20,17 @@ import ReportButton from "./components/ReportButton.vue";
 </template>
 
 <style scoped>
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-container {
+  flex: 1;
+}
+
 h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -32,8 +43,12 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.section-card:nth-of-type(2n) {
+  background-color: #f0f0f0;
 }
 
 @media (max-width: 768px) {
