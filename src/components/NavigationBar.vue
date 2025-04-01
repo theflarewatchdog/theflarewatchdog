@@ -4,6 +4,7 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "why", label: "Why" },
 ];
 
 const scrollToSection = (id: string) => {

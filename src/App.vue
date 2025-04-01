@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import NavigationBar from "./components/NavigationBar.vue";
 import ReportButton from "./components/ReportButton.vue";
+import About from "./components/About.vue";
+import Why from "./components/Why.vue";
 </script>
 
 <template>
@@ -11,10 +13,8 @@ import ReportButton from "./components/ReportButton.vue";
         <header><h1>Be a watchdog</h1></header>
         <ReportButton />
       </section>
-      <section id="about" class="section-card">
-        <header><h1>Be a watchdog</h1></header>
-        <ReportButton />
-      </section>
+      <About class="section-card" />
+      <Why class="section-card" />
     </div>
   </div>
 </template>
