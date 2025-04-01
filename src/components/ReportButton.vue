@@ -5,7 +5,7 @@ const reportUrl = "https://report-pollution.ene.gov.on.ca/app/";
 <template>
   <div class="report-container">
     <a :href="reportUrl" target="_blank" class="report-button">
-      Report an Environmental Concern
+      Report Your Concern
     </a>
   </div>
 </template>

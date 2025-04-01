@@ -10,7 +10,7 @@ import Why from "./components/Why.vue";
     <NavigationBar />
     <div class="section-container">
       <section id="home" class="section-card">
-        <header><h1>Be a watchdog</h1></header>
+        <header><h1>Have you heard the hum?</h1></header>
         <ReportButton />
       </section>
       <About class="section-card" />
