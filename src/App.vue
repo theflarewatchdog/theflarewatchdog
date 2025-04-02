@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import NavigationBar from "./components/NavigationBar.vue";
-import ReportButton from "./components/ReportButton.vue";
+import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Why from "./components/Why.vue";
 </script>
 
 <template>
   <div class="app-container">
-    <NavigationBar />
+    <NavigationBar class="navbar"/>
     <div class="section-container">
-      <section id="home" class="section-card">
-        <header><h1>Have you heard the hum?</h1></header>
-        <ReportButton />
-      </section>
+      <Home class="section-card" />
       <About class="section-card" />
       <Why class="section-card" />
     </div>
@@ -23,26 +20,22 @@ import Why from "./components/Why.vue";
 .app-container {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.navbar {
+  grid-row: 1;
 }
 
 .section-container {
-  flex: 1;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  grid-row: 2;
 }
 
 .section-card {
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 30px;
   box-sizing: border-box;
   scroll-snap-align: start;
 }

@@ -61,11 +61,12 @@ const navbarHeight = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0px;
   transition: top 0.3s;
 }
 
 ul {
+  padding: 0;
   list-style: none;
   display: flex;
   gap: 20px;
@@ -82,11 +83,5 @@ button {
 
 button:hover {
   text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
 }
 </style>
