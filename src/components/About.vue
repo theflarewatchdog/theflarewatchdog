@@ -2,15 +2,18 @@
 </script>
 
 <template>
-  <section id="about">
+  <section id="about" class="text-content">
     <p>
       East Hamilton's residents are familiar with the hum of industry.
     </p>
     <p>
-      But there's one noise that stands out from the rest. It's louder, more disruptive, and rings clearly throughout neighbourhoods more than 2 km away.
+      But there's one noise that stands out from the rest.
     </p>
     <p>
-      It's the noise that's heard when the largest gas flare in ArcelorMittal Dofasco's facility is lit.
+      It's heard when ArcelorMittal Dofasco's largest gas flare is lit.
+    </p>
+    <p>
+      It's loud enough to ring clearly throughout neighbourhoods more than 2 km away.
     </p>
   </section>
 </template>

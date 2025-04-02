@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section id="why">
+  <section id="why" class="text-content">
     <p>
       By reporting this noise with video evidence of the flare, you are helping our community send a clear message:
     </p>
