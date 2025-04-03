@@ -4,6 +4,9 @@
 <template>
   <section id="why" class="text-content">
     <p>
+      If you see the flare lit, record it!
+    </p>
+    <p>
       By reporting this noise with video evidence of the flare, you are helping our community send a clear message:
     </p>
     <ul>
