@@ -8,22 +8,20 @@ import ReportButton from "./components/ReportButton.vue";
     <NavigationBar class="navbar"/>
     <div class="section-container">
       <section id="home">
-        <header><h1 style="font-size: 2.5rem; margin-bottom: 20px;">
-          Does this sound familiar?
-        </h1></header>
-        <iframe 
-          width="560" 
-          height="315" 
-          src="https://www.youtube.com/embed/videoseries?si=A_oNDdt3qeOVgigU&amp;list=PLdz3MBuce8onVLxxlcGvME5LL0d77uKYB" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen
-        ></iframe>
+        <header><h1>Does this sound familiar?</h1></header>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/videoseries?si=A_oNDdt3qeOVgigU&amp;list=PLdz3MBuce8onVLxxlcGvME5LL0d77uKYB" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
       
-      <section class="text-content">
+      <section>
         <p>
           It's probably faimilar if you live in East Hamilton.
         </p>
@@ -35,7 +33,7 @@ import ReportButton from "./components/ReportButton.vue";
         </p>
       </section>
 
-      <section id="about" class="text-content">
+      <section id="about">
         <p>
           It is the sound that's heard when ArcelorMittal Dofasco's large gas flare is lit.
         </p>
@@ -44,7 +42,7 @@ import ReportButton from "./components/ReportButton.vue";
         </p>
       </section>
 
-      <section id="why" class="text-content">
+      <section id="why">
         <p>
           If you see the flare lit, record it!
         </p>
@@ -71,14 +69,6 @@ import ReportButton from "./components/ReportButton.vue";
   grid-template-rows: auto 1fr;
 }
 
-.navbar {
-  grid-row: 1;
-}
-
-.section-container {
-  grid-row: 2;
-}
-
 .section-container section {
   width: 100%;
   height: 100vh;
@@ -98,10 +88,34 @@ import ReportButton from "./components/ReportButton.vue";
 
 .fixed-report-button {
   position: fixed;
-  bottom: 100px;
+  bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
+  text-wrap: normal;
+}
+
+p, ul {
+  line-height: 1.8;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 650 / 315;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {

@@ -76,7 +76,7 @@ button {
   background: none;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: clamp(1rem, 3.0vw, 1.5rem);
   cursor: pointer;
   padding: 10px 15px;
 }
