@@ -14,10 +14,6 @@ const sections = [
   { id: "why", label: "Why" },
 ];
 
-const isActive = (sectionId: string) => {
-  return props.activeSection === sectionId || sectionId === "home" && props.activeSection === "home2";
-};
-
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
@@ -55,7 +51,7 @@ const navbarHeight = computed(() => {
       <li v-for="section in sections" :key="section.id">
         <button 
         @click="scrollToSection(section.id)"
-        :class="{ active: isActive(section.id) }">
+        :class="{ active: activeSection === section.id }">
           {{ section.label }}
         </button>
       </li>
