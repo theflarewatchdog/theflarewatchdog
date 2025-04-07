@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
-const props = defineProps({
+defineProps({
   activeSection: {
     type: String,
     required: true,
