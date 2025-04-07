@@ -95,7 +95,7 @@ import ReportButton from "./components/ReportButton.vue";
 }
 
 .section-container section:nth-of-type(2n) {
-  background-color: #f0f0f0;
+  background-color: #2e2e2e;
 }
 
 .split-section {
@@ -123,15 +123,15 @@ import ReportButton from "./components/ReportButton.vue";
 }
 
 h1 {
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 5vw, 2.8rem);
   margin-bottom: 20px;
   text-wrap: normal;
 }
 
 p, ul {
-  line-height: 1.8;
-  font-size: 1.5rem;
-  color: #333;
+  line-height: 1.4;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .squishable-iframe-container {
