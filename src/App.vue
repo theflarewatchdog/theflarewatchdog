@@ -9,7 +9,7 @@ import ReportButton from "./components/ReportButton.vue";
     <div class="section-container">
       <section id="home">
         <header><h1>Does this sound familiar?</h1></header>
-        <div class="video-container">
+        <div class="squishable-iframe-container" style="aspect-ratio: 650 / 350; max-width: 650px;">
           <iframe 
             src="https://www.youtube.com/embed/videoseries?si=A_oNDdt3qeOVgigU&amp;list=PLdz3MBuce8onVLxxlcGvME5LL0d77uKYB" 
             title="YouTube video player" 
@@ -26,28 +26,40 @@ import ReportButton from "./components/ReportButton.vue";
           It's probably faimilar if you live in East Hamilton.
         </p>
         <p>
-          Our community is familiar with the hum of industry.
-        </p>
-        <p>
-          But that noise that stands out from the rest.
+          While it's not uncommon for our community to hear hum of industry, this noise stands out from the rest.
         </p>
       </section>
 
       <section id="about">
-        <p>
-          It is the sound that's heard when ArcelorMittal Dofasco's large gas flare is lit.
-        </p>
-        <p>
-          It rings clearly throughout neighbourhoods more than 2 km away.
-        </p>
+        <div class="split-section">
+          <div>
+            <p>
+            It's the sound that's heard when ArcelorMittal Dofasco's large gas flare is lit.
+          </p>
+          <p>
+            It rings clearly throughout neighbourhoods more than 2 km away.
+          </p>
+          </div>
+          <div class="squishable-iframe-container" style="aspect-ratio: 1; max-width: 600px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d23512.067873812797!2d-79.800605013315!3d43.26735596398069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDE2JzAxLjEiTiA3OcKwNDgnMTguMCJX!5e1!3m2!1sen!2sca!4v1743996679872!5m2!1sen!2sca" 
+              width="600" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </section>
 
       <section id="why">
         <p>
-          If you see the flare lit, record it!
+          If the flare is lit, record it!
         </p>
         <p>
-          By reporting this noise with video evidence of the flare, you are helping our community send a clear message:
+          By reporting the noise with video evidence, you are helping our community send a clear message:
         </p>
         <ul>
           <li>We hear it.</li>
@@ -86,6 +98,22 @@ import ReportButton from "./components/ReportButton.vue";
   background-color: #f0f0f0;
 }
 
+.split-section {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .split-section {
+    flex-direction: column; /* Switch to vertical stacking */
+  }
+}
+
+.split section div {
+  flex: 1;
+}
+
 .fixed-report-button {
   position: fixed;
   bottom: 5vh;
@@ -106,14 +134,12 @@ p, ul {
   color: #333;
 }
 
-.video-container {
+.squishable-iframe-container {
   position: relative;
   width: 100%;
-  max-width: 650px;
-  aspect-ratio: 650 / 315;
 }
 
-.video-container iframe {
+.squishable-iframe-container iframe {
   width: 100%;
   height: 100%;
 }
