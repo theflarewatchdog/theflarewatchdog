@@ -1,11 +1,34 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 import NavigationBar from "./components/NavigationBar.vue";
 import ReportButton from "./components/ReportButton.vue";
+
+const activeSection = ref("home"); // Track the currently visible section
+
+onMounted(() => {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id;
+        }
+      });
+    },
+    { threshold: 0.6 } // Trigger when 60% of the section is visible
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  onUnmounted(() => {
+    sections.forEach((section) => observer.unobserve(section));
+  });
+});
 </script>
 
 <template>
   <div class="app-container">
-    <NavigationBar class="navbar"/>
+    <NavigationBar class="navbar" :active-section="activeSection" />
     <div class="section-container">
       <section id="home">
         <header><h1>Does this sound familiar?</h1></header>
@@ -21,7 +44,7 @@ import ReportButton from "./components/ReportButton.vue";
           </div>
       </section>
       
-      <section>
+      <section id="home2">
         <div class="normal-section">
           <p>
             It's probably faimilar if you live in East Hamilton.

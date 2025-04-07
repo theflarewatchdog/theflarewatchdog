@@ -1,11 +1,22 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
+const props = defineProps({
+  activeSection: {
+    type: String,
+    required: true,
+  },
+});
+
 const sections = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "why", label: "Why" },
 ];
+
+const isActive = (sectionId: string) => {
+  return props.activeSection === sectionId || sectionId === "home" && props.activeSection === "home2";
+};
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -32,9 +43,9 @@ onUnmounted(() => {
 });
 
 const navbarHeight = computed(() => {
-  if (scrollY.value < 50) return "60px"; // Full size
-  if (scrollY.value > 100) return "30px"; // Minimum size
-  return `${60 - ((scrollY.value - 50) / 50) * 30}px`; // Gradually shrink
+  if (scrollY.value < 50) return "60px";
+  if (scrollY.value > 100) return "40px";
+  return `${60 - ((scrollY.value - 50) / 50) * 30}px`;
 });
 </script>
 
@@ -42,7 +53,9 @@ const navbarHeight = computed(() => {
   <nav :style="{ height: navbarHeight }" class="navbar">
     <ul>
       <li v-for="section in sections" :key="section.id">
-        <button @click="scrollToSection(section.id)">
+        <button 
+        @click="scrollToSection(section.id)"
+        :class="{ active: isActive(section.id) }">
           {{ section.label }}
         </button>
       </li>
@@ -57,7 +70,7 @@ const navbarHeight = computed(() => {
   left: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  color: white;
+  color: rgba(255, 255, 255, 0.87);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,5 +96,10 @@ button {
 
 button:hover {
   text-decoration: underline;
+}
+
+button.active {
+  border: 2px solid rgba(255, 255, 255, 0.87);
+  border-radius: 40px;
 }
 </style>
