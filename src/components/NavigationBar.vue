@@ -17,9 +17,9 @@ const sections = [
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    window.scrollTo({
-      top: element.offsetTop,
+    element.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   }
 };

@@ -7,16 +7,27 @@ const activeSection = ref("home"); // Track the currently visible section
 
 onMounted(() => {
   const pages = document.querySelectorAll(".page");
+
+  let debounceTimeout: number | null = null;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          activeSection.value = entry.target.closest("section")?.id || "home";
-          window.location.hash = activeSection.value;
+        if (!entry.isIntersecting) {
+          return;
         }
+
+        const sectionId = entry.target.closest("section")?.id || "home";
+
+        if (debounceTimeout) {
+          clearTimeout(debounceTimeout);
+        }
+
+        debounceTimeout = setTimeout(() => {
+          activeSection.value = sectionId;
+        }, 200); 
       });
     },
-    { threshold: 0.6 } // Trigger when 60% of the section is visible
+    { threshold: 0.8 } // Trigger when 60% of the section is visible
   );
 
   pages.forEach((section) => observer.observe(section));
