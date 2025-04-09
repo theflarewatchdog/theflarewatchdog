@@ -27,7 +27,7 @@ onMounted(() => {
         }, 200); 
       });
     },
-    { threshold: 0.8 } // Trigger when 60% of the section is visible
+    { threshold: 0.8 }
   );
 
   pages.forEach((section) => observer.observe(section));
@@ -56,20 +56,21 @@ onMounted(() => {
             ></iframe>
           </div>
         </div>
-      
-        <div class="page">
-          <div class="normal-section">
-            <p>
-              It's probably faimilar if you live in East Hamilton.
-            </p>
-            <p>
-              While it's not uncommon for our community to hear hum of industry, this noise stands out from the rest.
-            </p>
+        <section id="noise">
+          <div class="page">
+            <div class="normal-section">
+              <p>
+                It's probably faimilar if you live in East Hamilton.
+              </p>
+              <p>
+                While it's not uncommon for our community to hear hum of industry, this noise stands out from the rest.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
 
-      <section id="about">
+      <section id="flare">
         <div class="page">
           <div class="split-section">
             <div style="flex: 1;">
@@ -95,7 +96,7 @@ onMounted(() => {
         </div>
       </section>
 
-      <section id="why">
+      <section id="contribute">
         <div class="page">
           <div class="normal-section">
             <p>
@@ -138,7 +139,7 @@ onMounted(() => {
   justify-content: center;
 }
 
-.page:nth-of-type(2n) {
+.page:nth-child(2n) {
   background-color: #2e2e2e;
 }
 

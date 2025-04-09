@@ -10,8 +10,9 @@ defineProps({
 
 const sections = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "why", label: "Why" },
+  { id: "noise", label: "The Noise" },
+  { id: "flare", label: "The Flare" },
+  { id: "contribute", label: "Contribute" },
 ];
 
 const scrollToSection = (id: string) => {
